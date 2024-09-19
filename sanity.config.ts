@@ -8,7 +8,7 @@ import schemaTypes from './sanity/schemas'
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
 
 // Define the singleton document types
-const singletonTypes = new Set(["siteSettings"])
+const singletonTypes = new Set(["siteSettings","homePage","pageProjects"])
 
 export default defineConfig({
   name: 'default',
@@ -25,6 +25,18 @@ export default defineConfig({
         S.list()
           .title("Content")
           .items([
+
+            S.listItem()
+              .title("Home Page")
+              .id("pageHome")
+              .child(S.document().schemaType("pageHome").documentId("pageHome")),
+
+            S.listItem()
+              .title("Projects Page")
+              .id("pageProjects")
+              .child(S.document().schemaType("pageProjects").documentId("pageProjects")),
+
+            S.divider(),
 
             // Regular document types
             S.documentTypeListItem("project").title("Projects"),

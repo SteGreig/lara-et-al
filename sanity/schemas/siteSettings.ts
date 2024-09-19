@@ -42,6 +42,12 @@ export default {
       validation: (Rule: RuleType) => Rule.required()
     },
     {
+      name: 'phone',
+      title: 'Phone Number',
+      type: 'text',
+      validation: (Rule: RuleType) => Rule.required()
+    },
+    {
       name: 'address',
       title: 'Address',
       type: 'text',

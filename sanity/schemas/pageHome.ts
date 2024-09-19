@@ -1,7 +1,7 @@
 import { RuleType } from "../schemaTypes"
 
 export default {
-  name: 'homePage',
+  name: 'pageHome',
   title: 'Home Page',
   type: 'document',
   fields: [
@@ -60,16 +60,12 @@ export default {
     {
       name: 'contentCopy',
       title: 'Content Copy',
-      type: 'text',
-      validation: (Rule: RuleType) => Rule.required()
+      type: 'contentCopy'
     },
     {
       name: 'contentImage',
       title: 'Content Image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
+      type: 'contentImage'
     },
     {
       title: 'SEO / Share Settings',
