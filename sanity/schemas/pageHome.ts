@@ -42,8 +42,7 @@ export default {
     {
       name: 'heroHeadline',
       title: 'Hero Headline',
-      type: 'string',
-      validation: (Rule: RuleType) => Rule.required()
+      type: 'heroHeadline'
     },
     {
       name: 'heroSubline',

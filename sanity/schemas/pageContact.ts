@@ -1,7 +1,7 @@
 
 export default {
-  name: 'pageProjects',
-  title: 'Projects Page',
+  name: 'pageContact',
+  title: 'Contact Page',
   type: 'document',
   fields: [
     {

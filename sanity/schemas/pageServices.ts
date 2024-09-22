@@ -1,7 +1,7 @@
 
 export default {
-  name: 'pageProjects',
-  title: 'Projects Page',
+  name: 'pageServices',
+  title: 'Services Page',
   type: 'document',
   fields: [
     {

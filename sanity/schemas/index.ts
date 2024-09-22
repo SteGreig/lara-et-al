@@ -4,6 +4,9 @@ import siteSettings from "./siteSettings";
 // pages
 import pageHome from "./pageHome";
 import pageProjects from "./pageProjects";
+import pageServices from "./pageServices";
+import pageTeam from "./pageTeam";
+import pageContact from "./pageContact";
 
 // collections
 import project from "./project";
@@ -22,6 +25,9 @@ const schemaTypes = [
 
   pageHome,
   pageProjects,
+  pageServices,
+  pageTeam,
+  pageContact,
 
   project,
   service,
