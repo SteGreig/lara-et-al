@@ -2,13 +2,38 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {media} from 'sanity-plugin-media'
+
 import schemaTypes from './sanity/schemas'
+import {type ListItem} from 'sanity/structure'
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
 
+const pages = [
+  {
+    title: "Home Page",
+    name: "pageHome"
+  },
+  {
+    title: "Projects Page",
+    name: "pageProjects"
+  },
+  {
+    title: "Services Page",
+    name: "pageServices"
+  },
+  {
+    title: "Team Page",
+    name: "pageTeam"
+  },
+  {
+    title: "Contact Page",
+    name: "pageContact"
+  }
+]
+
 // Define the singleton document types
-const singletonTypes = new Set(["siteSettings","homePage","pageProjects","pageServices","pageTeam","pageContact"])
+const singletonTypes = new Set(["siteSettings", ...pages.map(p => p.name)])
 
 export default defineConfig({
   name: 'default',
@@ -26,41 +51,21 @@ export default defineConfig({
           .title("Content")
           .items([
 
-            S.listItem()
-              .title("Home Page")
-              .id("pageHome")
-              .child(S.document().schemaType("pageHome").documentId("pageHome")),
-
-            S.listItem()
-              .title("Projects Page")
-              .id("pageProjects")
-              .child(S.document().schemaType("pageProjects").documentId("pageProjects")),
-
-            S.listItem()
-              .title("Services Page")
-              .id("pageServices")
-              .child(S.document().schemaType("pageServices").documentId("pageServices")),
-
-            S.listItem()
-              .title("Team Page")
-              .id("pageTeam")
-              .child(S.document().schemaType("pageTeam").documentId("pageTeam")),
-
-            S.listItem()
-              .title("Contact Page")
-              .id("pageContact")
-              .child(S.document().schemaType("pageContact").documentId("pageContact")),
+            ...pages.map(p =>
+              S.listItem()
+              .title(p.title)
+              .id(p.name)
+              .child(S.document().schemaType(p.name).documentId(p.name)),
+            ),
 
             S.divider(),
 
             // Regular document types
-            S.documentTypeListItem("project").title("Projects"),
-            S.documentTypeListItem("teamMember").title("Team Members"),
-            S.documentTypeListItem("testimonial").title("Testimonials"),
+            //S.documentTypeListItem("project").title("Projects"),
 
             // List out the rest of the document types, but filter out the config type
-            // ...S.documentTypeListItems()
-            // .filter(listItem => !['siteSettings'].includes(listItem.getId()))
+            ...S.documentTypeListItems()
+            .filter((listItem) => !['siteSettings', 'media.tag', ...pages.map(p => p.name)].includes(listItem.getId() ?? '')),
 
             // Add a visual divider (optional)
             S.divider(),

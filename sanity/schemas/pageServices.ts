@@ -1,28 +1,34 @@
+import pageTabs from "./common/pageTabs"
 
 export default {
   name: 'pageServices',
   title: 'Services Page',
   type: 'document',
+  groups: [...pageTabs],
   fields: [
     {
       name: 'heroHeadline',
       title: 'Hero Headline',
-      type: 'heroHeadline'
+      type: 'heroHeadline',
+      group: 'content',
     },
     {
       name: 'contentCopy',
       title: 'Content Copy',
-      type: 'contentCopy'
+      type: 'contentCopy',
+      group: 'content',
     },
     {
       name: 'contentImage',
       title: 'Content Image',
-      type: 'contentImage'
+      type: 'contentImage',
+      group: 'content',
     },
     {
       title: 'SEO / Share Settings',
       name: 'seo',
-      type: 'seo'
+      type: 'seo',
+      group: 'seo',
     }
   ],
   preview: {

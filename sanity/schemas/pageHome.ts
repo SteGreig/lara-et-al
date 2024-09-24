@@ -1,14 +1,17 @@
 import { RuleType } from "../schemaTypes"
+import pageTabs from "./common/pageTabs"
 
 export default {
   name: 'pageHome',
   title: 'Home Page',
   type: 'document',
+  groups: [...pageTabs],
   fields: [
     {
       name: 'heroSlides',
       title: 'Hero Slides',
       type: 'array',
+      group: 'content',
       of: [
         {
           type: 'object',
@@ -42,34 +45,40 @@ export default {
     {
       name: 'heroHeadline',
       title: 'Hero Headline',
-      type: 'heroHeadline'
+      type: 'heroHeadline',
+      group: 'content',
     },
     {
       name: 'heroSubline',
       title: 'Hero Subline',
       type: 'string',
+      group: 'content',
       validation: (Rule: RuleType) => Rule.required()
     },
     {
       name: 'contentHeadline',
       title: 'Content Headline',
       type: 'string',
+      group: 'content',
       validation: (Rule: RuleType) => Rule.required()
     },
     {
       name: 'contentCopy',
       title: 'Content Copy',
-      type: 'contentCopy'
+      type: 'contentCopy',
+      group: 'content',
     },
     {
       name: 'contentImage',
       title: 'Content Image',
-      type: 'contentImage'
+      type: 'contentImage',
+      group: 'content',
     },
     {
       title: 'SEO / Share Settings',
       name: 'seo',
-      type: 'seo'
+      type: 'seo',
+      group: 'seo',
     }
   ],
   preview: {

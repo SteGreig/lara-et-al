@@ -17,6 +17,7 @@ import testimonial from "./testimonial";
 // common
 import blockContent from "./common/blockContent";
 import seo from "./common/seo";
+import heroHeadline from "./common/heroHeadline";
 import contentCopy from "./common/contentCopy";
 import contentImage from "./common/contentImage";
 
@@ -36,6 +37,7 @@ const schemaTypes = [
 
   blockContent,
   seo,
+  heroHeadline,
   contentCopy,
   contentImage
 ];
