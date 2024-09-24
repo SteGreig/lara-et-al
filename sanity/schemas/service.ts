@@ -1,9 +1,11 @@
 import { RuleType } from "../schemaTypes"
+import { AiOutlineUnorderedList } from "react-icons/ai";
 
 export default {
   name: 'service',
-  title: 'Service',
+  title: 'Services',
   type: 'document',
+  icon: AiOutlineUnorderedList,
   fields: [
     {
       name: 'title',

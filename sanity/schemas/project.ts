@@ -2,7 +2,7 @@ import { RuleType } from "../schemaTypes";
 
 export default {
   name: 'project',
-  title: 'Project',
+  title: 'Projects',
   type: 'document',
   fields: [
     {

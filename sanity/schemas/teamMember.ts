@@ -1,9 +1,11 @@
 import { RuleType } from "../schemaTypes";
+import { AiOutlineTeam } from "react-icons/ai";
 
 export default {
   name: 'teamMember',
   title: 'Team Members',
   type: 'document',
+  icon: AiOutlineTeam,
   fields: [
     {
       name: 'name',

@@ -1,12 +1,12 @@
 // settings
 import siteSettings from "./siteSettings";
 
-// pages
+// pages with standard fields
+import pages from "./pages"
+const standardPages = pages.filter(p => p.name !== 'pageHome');
+
+// pages with any extra fields
 import pageHome from "./pageHome";
-import pageProjects from "./pageProjects";
-import pageServices from "./pageServices";
-import pageTeam from "./pageTeam";
-import pageContact from "./pageContact";
 
 // collections
 import project from "./project";
@@ -17,18 +17,13 @@ import testimonial from "./testimonial";
 // common
 import blockContent from "./common/blockContent";
 import seo from "./common/seo";
-import heroHeadline from "./common/heroHeadline";
-import contentCopy from "./common/contentCopy";
-import contentImage from "./common/contentImage";
 
 const schemaTypes = [
   siteSettings,
 
+  ...standardPages,
+
   pageHome,
-  pageProjects,
-  pageServices,
-  pageTeam,
-  pageContact,
 
   project,
   service,
@@ -36,10 +31,7 @@ const schemaTypes = [
   testimonial,
 
   blockContent,
-  seo,
-  heroHeadline,
-  contentCopy,
-  contentImage
+  seo
 ];
 
 export default schemaTypes;

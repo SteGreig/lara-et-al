@@ -1,9 +1,11 @@
 import { RuleType } from "../schemaTypes";
+import { AiOutlineMessage } from "react-icons/ai";
 
 export default {
   name: 'testimonial',
-  title: 'Testimonial',
+  title: 'Testimonials',
   type: 'document',
+  icon: AiOutlineMessage,
   fields: [
     {
       name: 'quote',

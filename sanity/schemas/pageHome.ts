@@ -45,7 +45,8 @@ export default {
     {
       name: 'heroHeadline',
       title: 'Hero Headline',
-      type: 'heroHeadline',
+      type: 'string',
+      validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {
@@ -65,13 +66,19 @@ export default {
     {
       name: 'contentCopy',
       title: 'Content Copy',
-      type: 'contentCopy',
+      type: 'array',
+      of: [{ type: 'block' }],
+      validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {
       name: 'contentImage',
       title: 'Content Image',
-      type: 'contentImage',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {

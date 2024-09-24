@@ -1,27 +1,33 @@
-import pageTabs from "./common/pageTabs"
+import { RuleType } from "@/sanity/schemaTypes"
+import pageTabs from "./pageTabs"
 
 export default {
-  name: 'pageProjects',
-  title: 'Projects Page',
   type: 'document',
   groups: [...pageTabs],
   fields: [
     {
       name: 'heroHeadline',
       title: 'Hero Headline',
-      type: 'heroHeadline',
+      type: 'string',
+      validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {
       name: 'contentCopy',
       title: 'Content Copy',
-      type: 'contentCopy',
+      type: 'array',
+      of: [{ type: 'block' }],
+      validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {
       name: 'contentImage',
       title: 'Content Image',
-      type: 'contentImage',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {

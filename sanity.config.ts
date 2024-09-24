@@ -3,34 +3,14 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {media} from 'sanity-plugin-media'
 
+import pages from './sanity/schemas/pages'
 import schemaTypes from './sanity/schemas'
-import {type ListItem} from 'sanity/structure'
+
+import { AiOutlineFile } from "react-icons/ai";
+import { AiOutlineSetting } from "react-icons/ai"
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
-
-const pages = [
-  {
-    title: "Home Page",
-    name: "pageHome"
-  },
-  {
-    title: "Projects Page",
-    name: "pageProjects"
-  },
-  {
-    title: "Services Page",
-    name: "pageServices"
-  },
-  {
-    title: "Team Page",
-    name: "pageTeam"
-  },
-  {
-    title: "Contact Page",
-    name: "pageContact"
-  }
-]
 
 // Define the singleton document types
 const singletonTypes = new Set(["siteSettings", ...pages.map(p => p.name)])
@@ -55,6 +35,7 @@ export default defineConfig({
               S.listItem()
               .title(p.title)
               .id(p.name)
+              .icon(AiOutlineFile)
               .child(S.document().schemaType(p.name).documentId(p.name)),
             ),
 
@@ -74,6 +55,7 @@ export default defineConfig({
             S.listItem()
               .title("Site Settings")
               .id("siteSettings")
+              .icon(AiOutlineSetting)
               .child(
                 // Instead of rendering a list of documents, we render a single
                 // document, specifying the `documentId` manually to ensure
