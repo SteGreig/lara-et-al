@@ -5,7 +5,8 @@ export default [
   {
     title: 'Content',
     name: 'content',
-    icon: AiOutlineAlignLeft
+    icon: AiOutlineAlignLeft,
+    default: true
   },
   {
     title: 'SEO',

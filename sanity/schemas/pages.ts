@@ -7,13 +7,13 @@ const pages = [
     ...pageStandard
   },
   {
-    title: "Projects Page",
-    name: "pageProjects",
+    title: "Services Page",
+    name: "pageServices",
     ...pageStandard
   },
   {
-    title: "Services Page",
-    name: "pageServices",
+    title: "Projects Page",
+    name: "pageProjects",
     ...pageStandard
   },
   {

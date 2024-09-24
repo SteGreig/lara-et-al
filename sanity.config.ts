@@ -17,7 +17,7 @@ const singletonTypes = new Set(["siteSettings", ...pages.map(p => p.name)])
 
 export default defineConfig({
   name: 'default',
-  title: 'lara-et-al',
+  title: 'Lara et al',
   apiVersion: "2024-09-17",
   projectId: '8iwtdl5j',
   dataset: 'production',
@@ -26,6 +26,7 @@ export default defineConfig({
 
   plugins: [
     structureTool({
+      icon: AiOutlineFile,
       structure: (S) =>
         S.list()
           .title("Content")
@@ -68,7 +69,7 @@ export default defineConfig({
           ]),
     }),
     media(),
-    visionTool()
+    //visionTool()
   ],
 
   schema: {

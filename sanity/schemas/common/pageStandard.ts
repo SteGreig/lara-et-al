@@ -3,6 +3,7 @@ import pageTabs from "./pageTabs"
 
 export default {
   type: 'document',
+  //__experimental_formPreviewTitle: false,
   groups: [...pageTabs],
   fields: [
     {
@@ -17,7 +18,7 @@ export default {
       title: 'Content Copy',
       type: 'array',
       of: [{ type: 'block' }],
-      validation: (Rule: RuleType) => Rule.required(),
+      //validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {
@@ -27,7 +28,7 @@ export default {
       options: {
         hotspot: true
       },
-      validation: (Rule: RuleType) => Rule.required(),
+      //validation: (Rule: RuleType) => Rule.required(),
       group: 'content',
     },
     {

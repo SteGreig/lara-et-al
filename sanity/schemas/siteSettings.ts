@@ -18,13 +18,6 @@ export default {
       title: 'Logo',
       type: 'image',
       options: {hotspot: true},
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alt',
-          type: 'string'
-        }
-      ]
     },
     {
       name: 'siteUrl',
@@ -44,7 +37,7 @@ export default {
     {
       name: 'phone',
       title: 'Phone Number',
-      type: 'text',
+      type: 'string',
       validation: (Rule: RuleType) => Rule.required()
     },
     {

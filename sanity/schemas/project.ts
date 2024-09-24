@@ -26,7 +26,8 @@ export default {
       type: 'array',
       of: [{ type: 'image' }],
       options: {
-        hotspot: true
+        hotspot: true,
+        layout: 'grid',
       }
     },
     {
@@ -77,7 +78,7 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'clientType',
+      //subtitle: 'clientType',
       media: 'mainImage'
     }
   }

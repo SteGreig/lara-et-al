@@ -90,8 +90,12 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heroHeadline',
       media: 'heroSlides.0.image'
+    },
+    prepare() {
+      return {
+        title: `Home Page`
+      };
     }
   }
 }
