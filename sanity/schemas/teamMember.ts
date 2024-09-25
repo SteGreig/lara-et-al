@@ -24,7 +24,7 @@ export default {
       title: 'Bio',
       type: 'text',
       description: 'A short bio of the team member',
-      validation: (Rule: RuleType) => Rule.required()
+      //validation: (Rule: RuleType) => Rule.required()
     },
     {
       name: 'profileImage',
@@ -33,7 +33,7 @@ export default {
       options: {
         hotspot: true
       },
-      validation: (Rule: RuleType) => Rule.required()
+      //validation: (Rule: RuleType) => Rule.required()
     },
     {
       name: 'slug',

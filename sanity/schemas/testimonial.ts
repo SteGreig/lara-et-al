@@ -12,7 +12,7 @@ export default {
       title: 'Quote',
       type: 'text',
       description: 'The testimonial quote',
-      validation: (Rule: RuleType) => Rule.required().min(10).max(300)
+      validation: (Rule: RuleType) => Rule.required()
     },
     {
       name: 'person',

@@ -9,7 +9,7 @@ const dm_sans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Interior Design in London",
+    default: "Interior Design in London, Kent and the South East",
     template: "%s - Lara et al",
   },
   description:
