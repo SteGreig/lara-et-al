@@ -5,6 +5,7 @@ const client = createClient({
   projectId: "8iwtdl5j",
   dataset: "production",
   apiVersion: "2024-09-17",
+  //useCdn: false,
 });
 
 // Get a pre-configured url-builder from your sanity client
@@ -26,3 +27,43 @@ export async function getProjects() {
     }`
   )
 }
+
+export async function getHomePage() {
+  return client.fetch(
+    groq`*[_type == "pageHome"][0]{
+      heroSlides[]{
+        caption,
+        "image": image.asset->url,
+        "projectSlug": projectLink->slug.current
+      },
+      heroSubline
+    }`
+  )
+}
+
+export async function getStandardPageData(doc: string) {
+  return client.fetch(
+    groq`*[_type == "${doc}"][0]{
+      heroHeadline,
+      contentCopy,
+      "contentImage": contentImage.asset->url,
+      seo {
+        metaTitle,
+        metaDescription,
+        "ogImage": openGraphImage.asset->url
+      }
+    }`
+  )
+}
+
+export async function getSiteSettings() {
+  const query = `*[_type == "siteSettings"][0]`;
+  const data = await client.fetch(query);
+  return data;
+}
+
+// export async function getSingleton(doc: string) {
+//   const query = `*[_type == "${doc}"][0]`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
