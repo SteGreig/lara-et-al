@@ -1,6 +1,7 @@
 
 export type HeroSlide = {
-  caption: string;
+  caption?: string;
   image: string;
-  projectSlug: string;
+  imageAlt: string;
+  projectSlug?: string;
 }

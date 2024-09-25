@@ -34,6 +34,7 @@ export async function getHomePage() {
       heroSlides[]{
         caption,
         "image": image.asset->url,
+        "imageAlt": image.asset->alt,
         "projectSlug": projectLink->slug.current
       },
       heroSubline
