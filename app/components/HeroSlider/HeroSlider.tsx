@@ -32,8 +32,8 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           );
 
         return (
-          <div className="relative">
-            <SlideEl key={i}>
+          <div key={i} className="relative">
+            <SlideEl>
               <Image src={slide.image} alt={slide.imageAlt ?? slide.caption} width={2500} height={1412} />
             </SlideEl>
 

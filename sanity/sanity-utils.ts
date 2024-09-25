@@ -58,10 +58,14 @@ export async function getStandardPageData(doc: string) {
 }
 
 export async function getSiteSettings() {
-  const query = `*[_type == "siteSettings"][0]`;
-  const data = await client.fetch(query);
-  return data;
+  return client.fetch(
+    groq`*[_type == "siteSettings"][0]{
+      ...,
+      "logo": logo.asset->url
+    }`
+  )
 }
+
 
 // export async function getSingleton(doc: string) {
 //   const query = `*[_type == "${doc}"][0]`;

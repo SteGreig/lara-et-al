@@ -7,7 +7,7 @@ export default async function Header() {
 
   return (
     <header>
-      <Image src={site.logo.asset.url} alt={site.companyName} />
+      <Image src={site.logo} alt={site.companyName} width={302} height={58} />
     </header>
   )
 }

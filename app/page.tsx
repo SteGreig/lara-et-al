@@ -11,7 +11,6 @@ import HeroSlider from "./components/HeroSlider/HeroSlider";
 export default async function Home() {
   const projects = await getProjects();
 
-  const site = await getSiteSettings();
   const page = await getStandardPageData("pageHome");
   const home = await getHomePage();
 
