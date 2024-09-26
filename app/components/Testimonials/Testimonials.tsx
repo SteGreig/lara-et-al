@@ -1,6 +1,6 @@
 import { getTestimonials } from "@/sanity/sanity-utils";
 import { Testimonial as TestimonialType } from "../../types/Testimonial";
-import Slider from "../Slider/Slider";
+import Slider from "../Utils/Slider/Slider";
 
 export default async function Testimonials() {
 
