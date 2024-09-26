@@ -6,6 +6,7 @@ import {
   getHomePage,
   getStandardPageData,
 } from "@/sanity/sanity-utils";
+import { urlFor } from "@/sanity/sanity-utils";
 
 import HeroSlider from "./components/HeroSlider/HeroSlider";
 import Testimonials from "./components/Testimonials/Testimonials";
@@ -13,6 +14,12 @@ import Testimonials from "./components/Testimonials/Testimonials";
 export default async function Home() {
   const page = await getStandardPageData("pageHome");
   const home = await getHomePage();
+
+  const imageUrl = urlFor(page.contentImage)
+    .width(1000) // Resize width to 800px
+    .height(800) // Optionally set height (cropping may be needed)
+    .fit('crop') // Optionally crop to fit
+    .url(); // Get the final URL
 
   return (
     <div>
@@ -30,8 +37,8 @@ export default async function Home() {
           {page.contentImage && (
             <aside className="w-full md:w-5/12">
               <Image
-                src={page.contentImage}
-                alt={page.contentImageAlt}
+                src={imageUrl}
+                alt={page.contentImageAlt ?? home.contentHeadline}
                 width={1000}
                 height={800}
               />

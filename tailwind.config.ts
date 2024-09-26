@@ -23,6 +23,21 @@ const config: Config = {
     },
     extend: {
       colors: {
+        'primary': {
+          DEFAULT: '#736B38',
+          50: '#CCC596',
+          100: '#C5BD89',
+          200: '#B8AE6D',
+          300: '#AA9E53',
+          400: '#8E8545',
+          500: '#736B38',
+          600: '#5B552C',
+          700: '#433E21',
+          800: '#2B2815',
+          900: '#131209',
+          950: '#070603'
+        },
+        'cream': '#FDFDF9',
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
