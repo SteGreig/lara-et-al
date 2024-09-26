@@ -23,7 +23,7 @@ export default async function Footer() {
         <ul className="col-start-3 flex gap-4">
           {site.socials &&
             site.socials.map((social: socialLink) => (
-              <li>
+              <li key={`footer-${social.platform}`}>
                 <Link href={social.url}>{social.platform}</Link>
               </li>
             ))}
