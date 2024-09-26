@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getSiteSettings } from "@/sanity/sanity-utils";
-import { LogoTextureSvg } from "../Utils/LogoSvg";
+import { LogoTextureSvg } from "../Utils/LogoTextureSvg";
 
 export default async function Footer() {
 
