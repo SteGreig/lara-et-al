@@ -32,12 +32,12 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           );
 
         return (
-          <div key={i} className="relative">
+          <div key={i} className={`${i === 0 ? 'relative' : 'absolute top-0 left-0 opacity-0'}`}>
             <SlideEl>
               <Image src={slide.image} alt={slide.imageAlt ?? slide.caption} width={2500} height={1412} />
             </SlideEl>
 
-            <div className="absolute top-full left-0 flex items-center">
+            <div className="w-full absolute top-full left-0 flex items-center">
               {slide.caption && (
                 <p className="flex items-center">
                   <span>Featured</span>

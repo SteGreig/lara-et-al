@@ -26,7 +26,6 @@ export default {
       title: 'Detail',
       type: 'string',
       description: 'Additional information about the person (e.g., location, job title)',
-      validation: (Rule: RuleType) => Rule
     }
   ],
   preview: {

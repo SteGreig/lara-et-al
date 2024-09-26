@@ -28,6 +28,32 @@ export async function getProjects() {
   )
 }
 
+export async function getTeamMembers() {
+  return client.fetch(
+    groq`*[_type == "teamMember"] | order(publishedAt desc){
+      _id,
+      publishedAt,
+      name,
+      "slug": slug.current,
+      "profileImage": profileImage.asset->url,
+      bio,
+      jobTitle,
+    }`
+  )
+}
+
+export async function getTestimonials() {
+  return client.fetch(
+    groq`*[_type == "testimonial"] | order(publishedAt desc){
+      _id,
+      publishedAt,
+      quote,
+      person,
+      detail,
+    }`
+  )
+}
+
 export async function getHomePage() {
   return client.fetch(
     groq`*[_type == "pageHome"][0]{
@@ -37,7 +63,8 @@ export async function getHomePage() {
         "imageAlt": image.asset->alt,
         "projectSlug": projectLink->slug.current
       },
-      heroSubline
+      heroSubline,
+      contentHeadline
     }`
   )
 }
@@ -48,6 +75,7 @@ export async function getStandardPageData(doc: string) {
       heroHeadline,
       contentCopy,
       "contentImage": contentImage.asset->url,
+      "contentImageAlt": contentImage.asset->alt,
       seo {
         metaTitle,
         metaDescription,

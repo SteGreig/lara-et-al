@@ -6,7 +6,7 @@ export default async function Header() {
   const site = await getSiteSettings();
 
   return (
-    <header>
+    <header className="header container">
       <Image src={site.logo} alt={site.companyName} width={302} height={58} />
     </header>
   )
