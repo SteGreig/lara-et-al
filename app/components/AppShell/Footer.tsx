@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getSiteSettings } from "@/sanity/sanity-utils";
+import { LogoTextureSvg } from "../Utils/LogoSvg";
 
 export default async function Footer() {
 
@@ -10,7 +11,7 @@ export default async function Footer() {
   return (
     <footer className="footer">
       <div className="px-2 lg:px-4 2xl:px-6 -mb-3">
-        <Image src={site.logo} alt={site.companyName} width={2500} height={480} />
+        <LogoTextureSvg />
       </div>
 
       <div className="bg-noise-30 bg-primary text-cream container py-6 grid grid-cols-12">
