@@ -14,45 +14,6 @@ export function urlFor(source: string) {
   return builder.image(source)
 }
 
-export async function getProjects() {
-  return client.fetch(
-    groq`*[_type == "project"] | order(publishedAt desc){
-      _id,
-      publishedAt,
-      name,
-      "slug": slug.current,
-      "image": image.asset->url,
-      content,
-      url,
-    }`
-  )
-}
-
-export async function getTeamMembers() {
-  return client.fetch(
-    groq`*[_type == "teamMember"] | order(publishedAt desc){
-      _id,
-      publishedAt,
-      name,
-      "slug": slug.current,
-      "profileImage": profileImage.asset->url,
-      bio,
-      jobTitle,
-    }`
-  )
-}
-
-export async function getTestimonials() {
-  return client.fetch(
-    groq`*[_type == "testimonial"] | order(publishedAt desc){
-      _id,
-      publishedAt,
-      quote,
-      person,
-      detail,
-    }`
-  )
-}
 
 export async function getHomePage() {
   return client.fetch(
@@ -91,6 +52,59 @@ export async function getSiteSettings() {
       ...,
       "logo": logo.asset->url
     }`
+  )
+}
+
+export async function getTeamMembers() {
+  return client.fetch(
+    groq`*[_type == "teamMember"] | order(publishedAt desc){
+      _id,
+      publishedAt,
+      name,
+      "slug": slug.current,
+      "profileImage": profileImage.asset->url,
+      bio,
+      jobTitle,
+    }`
+  )
+}
+
+export async function getTestimonials() {
+  return client.fetch(
+    groq`*[_type == "testimonial"] | order(publishedAt desc){
+      _id,
+      publishedAt,
+      quote,
+      person,
+      detail,
+    }`
+  )
+}
+
+export async function getProjects() {
+  return client.fetch(
+    groq`*[_type == "project"] | order(publishedAt desc){
+      _id,
+      publishedAt,
+      name,
+      "slug": slug.current,
+      "image": image.asset->url,
+      content,
+    }`
+  )
+}
+
+export async function getProject(slug: string) {
+  return client.fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]{
+      _id,
+      publishedAt,
+      name,
+      "slug": slug.current,
+      "image": image.asset->url,
+      content,
+    }`,
+    { slug }
   )
 }
 
