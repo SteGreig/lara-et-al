@@ -31,7 +31,7 @@ export const LogoTextureSvg = () => {
         height="100%"
         preserveAspectRatio="xMinYMin slice"
         xlinkHref="/bg-texture-green.png"
-        clip-path="url(#footerlogo)"
+        clipPath="url(#footerlogo)"
       ></image>
     </svg>
   );
