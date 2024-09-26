@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { getProjects, getStandardPageData } from "@/sanity/sanity-utils";
+import { Project as ProjectType } from '@/app/types/Project';
+import HeroBanner from '@/app/components/HeroBanner/HeroBanner';
 
 export const metadata: Metadata = {
   title: 'Projects',
@@ -6,9 +9,22 @@ export const metadata: Metadata = {
     'Projects page',
 };
 
-const pageProjects = () => {
+const pageProjects = async () => {
+
+  const projects = await getProjects();
+
+  const page = await getStandardPageData('pageProjects');
+
   return (
-    <div>pageProjects</div>
+    <div>
+
+      <HeroBanner headline={page.heroHeadline} />
+      
+      {projects.map((project: ProjectType) => (
+        <p>{project.name}</p>
+      ))}
+
+    </div>
   )
 }
 
