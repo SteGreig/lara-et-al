@@ -3,7 +3,6 @@ import { Testimonial as TestimonialType } from "../../types/Testimonial";
 import Slider from "../Utils/Slider/Slider";
 
 export default async function Testimonials() {
-
   const testimonials = await getTestimonials();
 
   return (
@@ -31,5 +30,5 @@ export default async function Testimonials() {
         </Slider>
       </div>
     </div>
-  )
+  );
 }

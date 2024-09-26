@@ -11,13 +11,10 @@ type HeroSlider = {
 const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
   return (
     <div className="relative">
-      
       {heroHeadline && (
         <div className="absolute bottom-0 left-0 z-10">
           <p className="text-3xl text-white">{heroHeadline}</p>
-          {heroSubline && (
-            <p>{heroSubline}</p>
-          )}
+          {heroSubline && <p>{heroSubline}</p>}
         </div>
       )}
 
@@ -32,9 +29,17 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           );
 
         return (
-          <div key={i} className={`${i === 0 ? 'relative' : 'absolute top-0 left-0 opacity-0'}`}>
+          <div
+            key={i}
+            className={`${i === 0 ? "relative" : "absolute top-0 left-0 opacity-0"}`}
+          >
             <SlideEl>
-              <Image src={slide.image} alt={slide.imageAlt ?? slide.caption} width={2500} height={1412} />
+              <Image
+                src={slide.image}
+                alt={slide.imageAlt ?? slide.caption}
+                width={2500}
+                height={1412}
+              />
             </SlideEl>
 
             <div className="w-full absolute top-full left-0 flex items-center">
@@ -45,7 +50,9 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
                   <span>{slide.caption}</span>
                 </p>
               )}
-              <Link className="ml-auto" href={`/projects/`}>Gallery</Link>
+              <Link className="ml-auto" href={`/projects/`}>
+                Gallery
+              </Link>
             </div>
           </div>
         );

@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 
-import {
-  getHomePage,
-  getStandardPageData,
-} from "@/sanity/sanity-utils";
+import { getHomePage, getStandardPageData } from "@/sanity/sanity-utils";
 import { urlFor } from "@/sanity/sanity-utils";
 
 import HeroSlider from "./components/HeroSlider/HeroSlider";
@@ -18,7 +15,7 @@ export default async function Home() {
   const imageUrl = urlFor(page.contentImage)
     .width(1000) // Resize width to 800px
     .height(800) // Optionally set height (cropping may be needed)
-    .fit('crop') // Optionally crop to fit
+    .fit("crop") // Optionally crop to fit
     .url(); // Get the final URL
 
   return (
@@ -54,10 +51,6 @@ export default async function Home() {
       </main>
 
       <Testimonials />
-
-      {/* {projects.map((project: ProjectType) => (
-        <p>{project.name}</p>
-      ))} */}
     </div>
   );
 }

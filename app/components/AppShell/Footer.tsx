@@ -5,10 +5,9 @@ import Link from "next/link";
 type socialLink = {
   url: string;
   platform: string;
-}
+};
 
 export default async function Footer() {
-
   const site = await getSiteSettings();
 
   const currentYear = new Date().getFullYear();
@@ -22,14 +21,17 @@ export default async function Footer() {
       <div className="bg-noise-30 bg-primary text-cream container py-7 grid grid-cols-12 uppercase tracking-widest text-sm">
         <p className="col-start-1">&copy; {currentYear}</p>
         <ul className="col-start-3 flex gap-4">
-          {site.socials && (
+          {site.socials &&
             site.socials.map((social: socialLink) => (
-              <li><Link href={social.url}>{social.platform}</Link></li>
-            ))
-          )}
+              <li>
+                <Link href={social.url}>{social.platform}</Link>
+              </li>
+            ))}
         </ul>
-        <p className="-col-end-1 justify-self-end whitespace-nowrap">{site.address}</p>
+        <p className="-col-end-1 justify-self-end whitespace-nowrap">
+          {site.address}
+        </p>
       </div>
     </footer>
-  )
+  );
 }
