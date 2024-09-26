@@ -26,8 +26,6 @@ export default async function Project({ params }: Props) {
 
   const project = await getProject(slug);
 
-  console.log(project);
-
   return (
     <div>
       <p>hello</p>
