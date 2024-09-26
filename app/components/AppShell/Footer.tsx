@@ -2,6 +2,11 @@ import { getSiteSettings } from "@/sanity/sanity-utils";
 import { LogoTextureSvg } from "../Utils/LogoTextureSvg";
 import Link from "next/link";
 
+type socialLink = {
+  url: string;
+  platform: string;
+}
+
 export default async function Footer() {
 
   const site = await getSiteSettings();
@@ -18,7 +23,7 @@ export default async function Footer() {
         <p className="col-start-1">&copy; {currentYear}</p>
         <ul className="col-start-3 flex gap-4">
           {site.socials && (
-            site.socials.map(social => (
+            site.socials.map((social: socialLink) => (
               <li><Link href={social.url}>{social.platform}</Link></li>
             ))
           )}
