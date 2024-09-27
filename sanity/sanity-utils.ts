@@ -88,7 +88,7 @@ export async function getProjects() {
       publishedAt,
       name,
       "slug": slug.current,
-      "image": image.asset->url,
+      "image": mainImage.asset->url,
       content,
     }`
   )
