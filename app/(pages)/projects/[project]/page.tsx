@@ -34,9 +34,9 @@ export default async function Project({ params }: Props) {
         <Link href="/projects/">All Projects</Link>
         <h1 className="font-bold text-5xl">{project.name}</h1>
         <PortableText value={project.description} />
-        {/* {project.services.map(service => (
-          <p>{service}</p>
-        ))} */}
+        {project.services.map(service => (
+          <p>{service.serviceName}</p>
+        ))}
       </article>
       <aside className="lg:flex-1">
         images
