@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { getProject, getProjects } from "@/sanity/sanity-utils";
+import Link from "next/link";
+import { PortableText } from "@portabletext/react";
 
 type Props = {
   params: { project: string };
@@ -27,9 +29,18 @@ export default async function Project({ params }: Props) {
   const project = await getProject(slug);
 
   return (
-    <div>
-      <p>hello</p>
-      {project.name}
-    </div>
+    <main className="fixed inset-0 bg-primary bg-noise-30 z-40 text-cream flex flex-col lg:flex-row p-4 xl:p-10 3xl:p-14 4xl:p-20">
+      <article className="lg:flex-1">
+        <Link href="/projects/">All Projects</Link>
+        <h1 className="font-bold text-5xl">{project.name}</h1>
+        <PortableText value={project.description} />
+        {/* {project.services.map(service => (
+          <p>{service}</p>
+        ))} */}
+      </article>
+      <aside className="lg:flex-1">
+        images
+      </aside>
+    </main>
   );
 }

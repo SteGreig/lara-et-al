@@ -89,7 +89,10 @@ export async function getProjects() {
       name,
       "slug": slug.current,
       "image": mainImage.asset->url,
-      content,
+      description,
+      clientType,
+      squareFootage,
+      services
     }`
   )
 }
@@ -102,7 +105,10 @@ export async function getProject(slug: string) {
       name,
       "slug": slug.current,
       "image": image.asset->url,
-      content,
+      description,
+      clientType,
+      squareFootage,
+      services
     }`,
     { slug }
   )
