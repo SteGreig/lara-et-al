@@ -81,6 +81,18 @@ export async function getTestimonials() {
   )
 }
 
+export async function getServices() {
+  return client.fetch(
+    groq`*[_type == "service"] | order(publishedAt desc){
+      _id,
+      publishedAt,
+      title,
+      description,
+      "image": image.asset->url,
+    }`
+  )
+}
+
 export async function getProjects() {
   return client.fetch(
     groq`*[_type == "project"] | order(publishedAt desc){

@@ -13,7 +13,7 @@ export default async function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
+    <footer className="footer mt-24 xl:mt-40">
       <div className="px-2 lg:px-4 2xl:px-6 -mb-3">
         <LogoTextureSvg />
       </div>

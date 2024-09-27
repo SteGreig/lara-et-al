@@ -44,6 +44,9 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+::marker{ display:none; }
+summary{ list-style: none }
+
 @tailwind utilities;
 
 
