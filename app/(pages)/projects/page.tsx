@@ -17,7 +17,7 @@ const pageProjects = async () => {
   const page = await getStandardPageData("pageProjects");
 
   return (
-    <div>
+    <main>
       <HeroBanner headline={page.heroHeadline} />
 
       <div className="my-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[2px]">
@@ -44,7 +44,7 @@ const pageProjects = async () => {
           </Link>
         ))}
       </div>
-    </div>
+    </main>
   );
 };
 
