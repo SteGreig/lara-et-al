@@ -38,7 +38,7 @@ export default async function Project({ params }: Props) {
 
       <article className="lg:flex-[5] lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col">
         
-        <Link className="inline-flex mt-4 xl:mt-10 3xl:mt-14 4xl:mt-20 mb-6" href="/projects/">All Projects</Link>
+        <Link className="inline-flex mt-spacing mb-6" href="/projects/">All Projects</Link>
 
         <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbars">
 
@@ -64,7 +64,7 @@ export default async function Project({ params }: Props) {
         </div>
       </article>
 
-      <aside className="lg:flex-[7] lg:py-4 xl:py-10 3xl:py-14 4xl:py-20 flex flex-col gap-4">
+      <aside className="lg:flex-[7] mt-spacing mb-spacing flex flex-col gap-4">
         {project.gallery && project.gallery.map((img: GalleryImage, i: number) => {
         return (
           <Image

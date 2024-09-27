@@ -14,7 +14,12 @@ body {
   @apply relative px-4 xl:px-10 3xl:px-14 4xl:px-20 w-full mx-auto;
 }
 
-
+.mt-spacing { @apply mt-4 xl:mt-10 3xl:mt-14 4xl:mt-20; }
+.mb-spacing { @apply mb-4 xl:mb-10 3xl:mb-14 4xl:mb-20; }
+.pt-spacing { @apply pt-4 xl:pt-10 3xl:pt-14 4xl:pt-20; }
+.pb-spacing { @apply pb-4 xl:pb-10 3xl:pb-14 4xl:pb-20; }
+.pr-spacing { @apply pr-4 xl:pr-10 3xl:pr-14 4xl:pr-20; }
+.pl-spacing { @apply pl-4 xl:pl-10 3xl:pl-14 4xl:pl-20; }
 
 .bg-noise-10 {
   @apply bg-blend-multiply;
