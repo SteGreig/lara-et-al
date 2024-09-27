@@ -14,6 +14,8 @@ body {
   @apply relative px-4 xl:px-10 3xl:px-14 4xl:px-20 w-full mx-auto;
 }
 
+
+
 .bg-noise-10 {
   @apply bg-blend-multiply;
   background-image: url(/bg-texture-10.png);
@@ -22,6 +24,19 @@ body {
 .bg-noise-30 {
   @apply bg-blend-multiply;
   background-image: url(/bg-texture-30.png);
+}
+
+.copy {
+  @apply flex flex-col gap-6 items-start;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 @tailwind utilities;

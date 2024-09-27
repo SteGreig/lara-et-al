@@ -89,10 +89,6 @@ export async function getProjects() {
       name,
       "slug": slug.current,
       "image": mainImage.asset->url,
-      description,
-      clientType,
-      squareFootage,
-      services
     }`
   )
 }
@@ -108,7 +104,14 @@ export async function getProject(slug: string) {
       description,
       clientType,
       squareFootage,
-      services
+      services,
+      gallery[] {
+        alt,
+        "url": asset->url,
+        "metadata": asset->metadata {
+          dimensions { width, height }
+        }
+      }
     }`,
     { slug }
   )
