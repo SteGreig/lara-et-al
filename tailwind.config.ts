@@ -37,7 +37,7 @@ const config: Config = {
           900: '#131209',
           950: '#070603'
         },
-        'cream': '#FDFDF9',
+        'cream': '#FAF7EE',
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
