@@ -35,6 +35,10 @@ main {
   line-height: 1;
 }
 
+.hero-slider:has(.hero-slider-nav:hover) .hero-slide-img {
+  filter: brightness(.7);
+}
+
 
 /* Spacing
 --------------------------- */
