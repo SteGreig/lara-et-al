@@ -30,6 +30,11 @@ main {
   transition: 1s;
 } */
 
+.large-headline {
+  font-size: clamp(1.875rem, 1.0451rem + 3.541vw, 5.25rem);
+  line-height: 1;
+}
+
 
 /* Spacing
 --------------------------- */

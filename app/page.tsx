@@ -27,8 +27,8 @@ export default async function Home() {
         heroSubline={home.heroSubline}
       />
 
-      <main className="container">
-        <h1>{home.contentHeadline}</h1>
+      <main className="container ~mt-16/28">
+        <h1 className="large-headline 2xl:w-11/12">{home.contentHeadline}</h1>
         <div className="flex flex-col md:flex-row">
           {page.contentImage && (
             <aside className="w-full md:w-5/12">

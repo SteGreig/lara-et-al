@@ -36,7 +36,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
               key={i}
               className={`hero-slide w-full h-full ${i === 0 ? "relative" : "absolute top-0 left-0 opacity-0"}`}
             >
-              <SlideEl className='block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-tr after:from-black/35 after:via-transparent'>
+              <SlideEl className='block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-tr after:from-black/40 after:via-transparent'>
                 <Image
                   src={slide.image}
                   alt={slide.imageAlt ?? slide.caption}
