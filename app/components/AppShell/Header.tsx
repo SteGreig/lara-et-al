@@ -7,7 +7,7 @@ export default async function Header() {
   const site = await getSiteSettings();
 
   return (
-    <header className="header container ~py-3/4 flex">
+    <header className="header container ~py-3/4 4xl:py-5 flex">
       <Link className="logo" href="/">
         <Image className="~w-44/64" src={site.logo} alt={site.companyName} width={302} height={58} />
       </Link>

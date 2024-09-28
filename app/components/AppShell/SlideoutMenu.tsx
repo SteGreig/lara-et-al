@@ -39,8 +39,8 @@ const SlideoutMenu = () => {
         </div>
         <nav className="">
           <ul className="flex flex-col ~px-8/14">
-            {pages.map((page) => (
-              <li>
+            {pages.map((page, i) => (
+              <li key={i}>
                 <Link
                   onClick={toggleMenu}
                   className="text-cream ~text-4xl/7xl ~py-3/5 flex gap-2 items-end group leading-none transition-all duration-300 menu-item"
