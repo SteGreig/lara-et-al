@@ -28,8 +28,8 @@ export default async function Home() {
       />
 
       <main className="container ~mt-16/28">
-        <h1 className="large-headline 2xl:w-11/12">{home.contentHeadline}</h1>
-        <div className="flex flex-col md:flex-row">
+        <h1 className="large-headline 2xl:w-11/12 ~mb-4/20">{home.contentHeadline}</h1>
+        <div className="flex flex-col md:flex-row ~gap-6/20">
           {page.contentImage && (
             <aside className="w-full md:w-5/12">
               <Image
