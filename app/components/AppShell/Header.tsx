@@ -8,7 +8,7 @@ export default async function Header() {
 
   return (
     <header className="header container ~py-3/4 flex">
-      <Link href="/">
+      <Link className="logo" href="/">
         <Image className="~w-44/64" src={site.logo} alt={site.companyName} width={302} height={58} />
       </Link>
       <span className="self-center flex-1 h-px bg-primary ~ml-4/10"></span>
