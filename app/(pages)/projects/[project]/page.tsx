@@ -32,7 +32,7 @@ export default async function Project({ params }: Props) {
   const project = await getProject(slug);
 
   return (
-    <main className="container absolute top-0 left-0 min-h-screen bg-primary bg-noise-30 z-40 text-cream flex flex-col lg:flex-row lg:gap-8 2xl:gap-20 4xl:gap-32">
+    <main className="container absolute top-0 left-0 min-h-screen bg-primary bg-noise-30 bg-fixed z-40 text-cream flex flex-col lg:flex-row lg:gap-8 2xl:gap-20 4xl:gap-32">
       <article className="lg:flex-[5] lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col">
         <Link className="inline-flex mt-spacing mb-6" href="/projects/">
           All Projects

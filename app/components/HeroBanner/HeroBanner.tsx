@@ -2,8 +2,8 @@
 
 const HeroBanner = ({headline}: {headline: string}) => {
   return (
-    <div className="bg-primary bg-noise-30 pt-28 text-cream">
-      <h1 className="text-[15vw] font-bold -tracking-wide leading-[0.7]">{headline}</h1>
+    <div className="bg-primary bg-noise-30 ~pt-28/64 text-cream">
+      <h1 className="text-[15vw] font-bold -tracking-wider leading-[0.63] container">{headline}</h1>
     </div>
   )
 }
