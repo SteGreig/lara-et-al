@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="container">
+      <div className="container h-[80vh] max-h-[1200px] xl:h-auto">
         <HeroSlider
           slides={home.heroSlides}
           heroHeadline={page.heroHeadline}
@@ -28,7 +28,7 @@ export default async function Home() {
         />
       </div>
 
-      <main className="container">
+      {/* <main className="container">
         <h1>{home.contentHeadline}</h1>
         <div className="flex flex-col md:flex-row">
           {page.contentImage && (
@@ -48,9 +48,9 @@ export default async function Home() {
             </article>
           )}
         </div>
-      </main>
+      </main> */}
 
-      <Testimonials />
+      {/* <Testimonials /> */}
     </div>
   );
 }

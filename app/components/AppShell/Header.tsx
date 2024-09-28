@@ -6,10 +6,12 @@ export default async function Header() {
   const site = await getSiteSettings();
 
   return (
-    <header className="header container">
+    <header className="header container ~py-4/6 flex">
       <Link href="/">
-        <Image src={site.logo} alt={site.companyName} width={302} height={58} />
+        <Image className="~w-44/72" src={site.logo} alt={site.companyName} width={302} height={58} />
       </Link>
+      <span className="self-center flex-1 h-px bg-primary ~ml-4/10"></span>
+      <Link className="btn ~/2xl:~px-4/11 ~/2xl:~py-2/4" href="/contact/">Contact</Link>
     </header>
   );
 }

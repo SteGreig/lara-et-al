@@ -16,8 +16,8 @@ export default async function Testimonials() {
       </div>
       <div className="w-full xl:w-7/12">
         <Slider>
-          {testimonials.map((testimonial: TestimonialType) => (
-            <div>
+          {testimonials.map((testimonial: TestimonialType, i: number) => (
+            <div key={i}>
               <blockquote>
                 <p>{testimonial.quote}</p>
                 <cite>

@@ -10,7 +10,7 @@ type HeroSlider = {
 
 const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
   return (
-    <div className="relative">
+    <div className="relative h-full w-full">
       {heroHeadline && (
         <div className="absolute bottom-0 left-0 z-10">
           <p className="text-3xl text-white">{heroHeadline}</p>
@@ -23,15 +23,15 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           children,
         }: Readonly<{ children: React.ReactNode }>) =>
           slide.projectSlug ? (
-            <Link href={`/projects/${slide.projectSlug}/`}>{children}</Link>
+            <Link className="block w-full h-full" href={`/projects/${slide.projectSlug}/`}>{children}</Link>
           ) : (
-            <div>{children}</div>
+            <div className="w-full h-full">{children}</div>
           );
 
         return (
           <div
             key={i}
-            className={`${i === 0 ? "relative" : "absolute top-0 left-0 opacity-0"}`}
+            className={`hero-slide w-full h-full ${i === 0 ? "relative" : "absolute top-0 left-0 opacity-0"}`}
           >
             <SlideEl>
               <Image
@@ -39,6 +39,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
                 alt={slide.imageAlt ?? slide.caption}
                 width={2500}
                 height={1412}
+                className="w-full h-full object-cover"
               />
             </SlideEl>
 

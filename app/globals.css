@@ -7,20 +7,50 @@
 } */
 
 body {
-  @apply bg-cream text-primary;
+  @apply bg-cream text-primary font-primary;
 }
 
+
+/* Spacing
+--------------------------- */
 .container {
-  @apply relative px-4 xl:px-10 3xl:px-14 4xl:px-20 w-full mx-auto;
+  @apply relative ~px-4/16 4xl:px-20 w-full mx-auto;
 }
 
-.mt-spacing { @apply mt-4 xl:mt-10 3xl:mt-14 4xl:mt-20; }
-.mb-spacing { @apply mb-4 xl:mb-10 3xl:mb-14 4xl:mb-20; }
-.pt-spacing { @apply pt-4 xl:pt-10 3xl:pt-14 4xl:pt-20; }
-.pb-spacing { @apply pb-4 xl:pb-10 3xl:pb-14 4xl:pb-20; }
-.pr-spacing { @apply pr-4 xl:pr-10 3xl:pr-14 4xl:pr-20; }
-.pl-spacing { @apply pl-4 xl:pl-10 3xl:pl-14 4xl:pl-20; }
+.mt-spacing { @apply ~mt-4/16 4xl:mt-20; }
+.mb-spacing { @apply ~mb-4/16 4xl:mb-20; }
+.pt-spacing { @apply ~pt-4/16 4xl:pt-20; }
+.pb-spacing { @apply ~pb-4/16 4xl:pb-20; }
+.pr-spacing { @apply ~pr-4/16 4xl:pr-20; }
+.pl-spacing { @apply ~pl-4/16 4xl:pl-20; }
 
+
+/* Btns
+--------------------------- */
+.btn {
+  @apply ~/2xl:~px-4/8 ~/2xl:~py-2/3 rounded-full border border-primary ~text-sm/xl font-medium transition duration-[0.6s] relative overflow-hidden hover:text-cream hover:shadow-xl hover:shadow-primary/20;
+}
+
+.btn:after {
+  content: "";
+  @apply absolute top-0 left-1/2 w-full h-[200%] bg-primary rounded-full -translate-x-1/2 translate-y-full transition duration-[0.8s];
+  z-index: -1;
+}
+
+.btn:hover:after {
+  @apply -translate-y-4 scale-110;
+}
+
+
+/* Copy
+--------------------------- */
+.copy {
+  @apply flex flex-col gap-6 items-start;
+}
+
+
+/* Utils
+--------------------------- */
 .bg-noise-10 {
   @apply bg-blend-multiply;
   background-image: url(/bg-texture-10.png);
@@ -29,10 +59,6 @@ body {
 .bg-noise-30 {
   @apply bg-blend-multiply;
   background-image: url(/bg-texture-30.png);
-}
-
-.copy {
-  @apply flex flex-col gap-6 items-start;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
