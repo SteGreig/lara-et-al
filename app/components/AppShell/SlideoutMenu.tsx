@@ -31,9 +31,9 @@ const SlideoutMenu = () => {
       <div
         className={`${isOpen ? "shadow-2xl translate-x-0" : "translate-x-full"} fixed top-0 right-0 h-screen w-full max-w-screen-xs bg-primary bg-noise-30 z-50 transition duration-300`}
       >
-        <div className="flex items-center ~py-3/4 pr-spacing group">
+        <div className="flex items-center ~py-3/4 pr-spacing">
           <span className="h-px flex-1 bg-cream"></span>
-          <button className="~/2xl:~w-[2.375rem]/[3.23rem] aspect-square bg-cream rounded-full text-primary text-lg flex justify-center items-center" onClick={toggleMenu}>
+          <button className="~/2xl:~w-[2.375rem]/[3.23rem] aspect-square bg-cream rounded-full text-primary text-lg flex justify-center items-center group" onClick={toggleMenu}>
             <AiOutlineClose className="group-hover:scale-125 transition" />
           </button>
         </div>

@@ -32,7 +32,7 @@ const pageServices = async () => {
                 <h2>{service.title}</h2>
                 <span><GoArrowDown /></span>
               </summary>
-              <div className="flex mt-2 pb-6 container">
+              <div className="flex flex-col md:flex-row mt-2 pb-6 container">
                 <div className="copy mb-4 md:w-1/2">
                   <PortableText value={service.description} />
                 </div>

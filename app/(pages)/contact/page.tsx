@@ -29,16 +29,16 @@ const pageContact = async () => {
           </div>
 
           <div className="font-medium text-xl flex flex-col gap-2 mt-8">
-            {site.phone && <p>{site.phone}</p>}
-            {site.email && <p>{site.email}</p>}
-            {site.address && <p>{site.address}</p>}
+            {site.phone && <p>T: <a className="hover:brightness-50 transition" href={`tel:${site.phone}`}>{site.phone}</a></p>}
+            {site.email && <p>E: <a className="hover:brightness-50 transition" href={`mailto:${site.email}`}>{site.email}</a></p>}
+            {site.address && <p>A: {site.address}</p>}
           </div>
 
           {site.socials && (
             <ul className="font-medium text-xl mt-8 flex gap-4">
               {site.socials.map((social: socialLink) => (
                 <li key={`footer-${social.platform}`}>
-                  <Link href={social.url}>{social.platform}</Link>
+                  <Link className="hover:brightness-50 transition" href={social.url}>{social.platform}</Link>
                 </li>
               ))}
             </ul>

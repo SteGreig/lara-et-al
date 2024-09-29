@@ -30,7 +30,7 @@ const BtnArrow = ({
 
   return (
     <Wrapper
-      className={`${className} flex items-center gap-2 group transition ${theme == 'light' ? '' : 'hover:brightness-50'}`}
+      className={`${className} btn-arrow flex items-center gap-2 group transition ${theme == 'light' ? '' : 'hover:brightness-50'}`}
     >
       <span className={`${direction === "left" && "order-1"}`}>{label}</span>
       <LongArrow direction={direction} theme={theme} />

@@ -77,6 +77,10 @@ main {
   @apply flex flex-col gap-6 items-start ~text-base/2xl;
 }
 
+.copy a:not(.btn):not(.btn-arrow) {
+  @apply underline hover:brightness-50;
+}
+
 
 /* Utils
 --------------------------- */

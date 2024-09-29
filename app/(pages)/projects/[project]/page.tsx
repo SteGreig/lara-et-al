@@ -43,8 +43,8 @@ export default async function Project({ params }: Props) {
           theme="light"
         />
 
-        <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbars">
-          <h1 className="text-6xl font-medium">{project.name}</h1>
+        <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbar">
+          <h1 className="~text-4xl/6xl leading-tight font-medium">{project.name}</h1>
 
           {project.description && (
             <div className="copy mb-4">

@@ -44,7 +44,7 @@ export default async function Home() {
           {page.contentCopy && (
             <article className="copy w-full md:w-7/12">
               <PortableText value={page.contentCopy} />
-              <BtnArrow className="text-base mt-4" href={`/team/`} label="Our Team" />
+              <BtnArrow className="text-base ~mt-2/4" href={`/team/`} label="Our Team" />
             </article>
           )}
         </div>
