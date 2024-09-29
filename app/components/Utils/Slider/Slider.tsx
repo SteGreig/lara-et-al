@@ -30,7 +30,7 @@ const Slider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <div>
       <div ref={sliderRef} className="flex gap-6 overflow-x-auto hide-scrollbar snap-mandatory snap-x scroll-smooth">{children}</div>
-      <nav className='w-full flex justify-center xs:justify-end px-4'>
+      <nav className='w-full flex justify-center xs:justify-end px-4 mt-4'>
         <button className='px-2 py-4 text-4xl hover:brightness-50 transition' onClick={scrollPrev}>
           <LongArrow direction='left' />
         </button>
