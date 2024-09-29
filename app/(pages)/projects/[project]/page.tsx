@@ -1,9 +1,7 @@
 import { Metadata } from "next";
 import { getProject, getProjects } from "@/sanity/sanity-utils";
-import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity-utils";
 import { GalleryImage } from "@/app/types/GalleryImage";
 import BtnArrow from "@/app/components/Utils/BtnArrow";
 
@@ -58,8 +56,8 @@ export default async function Project({ params }: Props) {
 
           {project.services && (
             <ul>
-              {project.services.map((service: { serviceName: string }) => (
-                <li className="font-medium">{service.serviceName}</li>
+              {project.services.map((service: { serviceName: string }, i: number) => (
+                <li key={i} className="font-medium">{service.serviceName}</li>
               ))}
             </ul>
           )}
