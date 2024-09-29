@@ -41,7 +41,7 @@ export default async function Project({ params }: Props) {
           theme="light"
         />
 
-        <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbar">
+        <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbar scroll-smooth">
           <h1 className="~text-4xl/6xl leading-tight font-medium">{project.name}</h1>
 
           {project.description && (
@@ -51,7 +51,7 @@ export default async function Project({ params }: Props) {
           )}
 
           {project.squareFootage && (
-            <p className="font-medium">{project.squareFootage} sqft</p>
+            <p className="font-medium">{project.squareFootage.toLocaleString()} sqft</p>
           )}
 
           {project.services && (
