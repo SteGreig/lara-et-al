@@ -47,6 +47,10 @@ main {
   filter: brightness(.7);
 }
 
+details:not([open]) .service-trigger:hover img {
+  @apply lg:block;
+}
+
 
 /* Spacing
 --------------------------- */

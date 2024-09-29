@@ -31,9 +31,24 @@ const pageServices = async () => {
               key={i}
               className="border-t last:border-b border-primary"
             >
-              <summary className="~text-2xl/5xl cursor-pointer py-4 container flex justify-between items-center [[open]_&>span]:rotate-180">
+              <summary className="service-trigger ~text-2xl/5xl cursor-pointer py-4 container flex justify-between items-center [[open]_&>span]:rotate-180 relative hover:text-primary-700 transition">
                 <h2>{service.title}</h2>
                 <span><GoArrowDown /></span>
+                <Image
+                  src={
+                    service.image
+                      ? urlFor(service.image)
+                          .width(230)
+                          .height(164)
+                          .fit("crop")
+                          .url()
+                      : "https://picsum.photos/230/164"
+                  }
+                  alt={service.title}
+                  width={230}
+                  height={164}
+                  className="absolute top-1/2 right-[20%] -translate-y-1/2 hidden"
+                />
               </summary>
               <div className="flex flex-col md:flex-row mt-2 pb-6 container">
                 <div className="copy mb-4 md:w-1/2">
