@@ -7,6 +7,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/sanity-utils";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
+import BtnArrow from "../Utils/BtnArrow";
 
 type HeroSlider = {
   slides: HeroSlide[];
@@ -89,9 +90,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
                     <span className="text-sm whitespace-nowrap text-ellipsis overflow-hidden">{slide.caption}</span>
                   </p>
                 )}
-                <Link className="sm:ml-auto mt-2 sm:mt-0" href={`/projects/`}>
-                  Gallery
-                </Link>
+                <BtnArrow href={`/projects/`} label="Gallery" />
               </div>
             </div>
           );
