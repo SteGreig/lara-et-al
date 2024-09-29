@@ -43,7 +43,7 @@ const SlideoutMenu = () => {
               <li key={i}>
                 <Link
                   onClick={toggleMenu}
-                  className="text-cream ~text-4xl/7xl ~py-3/5 flex gap-2 items-end group leading-none transition-all duration-300 menu-item"
+                  className="text-cream ~text-4xl/6xl ~py-3/5 flex gap-2 items-end group leading-none transition-all duration-300 menu-item"
                   href={`/${page.slug}/`}
                 >
                   {page.menuTitle}
@@ -57,7 +57,7 @@ const SlideoutMenu = () => {
 
       {/* Backdrop for when menu is open */}
       <div
-        className={`${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} fixed inset-0 bg-primary-900/80 z-40 backdrop-blur-sm transition duration-1000 delay-100`}
+        className={`${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} fixed inset-0 bg-primary-900/80 z-40 backdrop-blur-sm transition duration-1000`}
         onClick={toggleMenu}
       ></div>
     </>

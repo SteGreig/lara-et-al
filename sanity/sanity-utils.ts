@@ -5,6 +5,7 @@ const client = createClient({
   projectId: "8iwtdl5j",
   dataset: "production",
   apiVersion: "2024-09-17",
+  useCdn: true,
   //useCdn: false,
 });
 

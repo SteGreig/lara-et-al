@@ -49,7 +49,7 @@ export default async function Home() {
         </div>
       </main>
 
-      {/* <Testimonials /> */}
+      <Testimonials className="~mt-16/40" />
     </div>
   );
 }
