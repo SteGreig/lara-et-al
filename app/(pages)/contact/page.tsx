@@ -45,7 +45,7 @@ const pageContact = async () => {
           )}
         </article>
 
-        <aside className="md:flex-1">
+        <aside className="md:flex-1 flex justify-center">
           <Image
             src={
               page.contentImage
