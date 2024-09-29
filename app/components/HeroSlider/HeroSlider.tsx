@@ -31,11 +31,11 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
       <div className="relative h-auto w-full">
         {/* HERO TEXT CONTENT */}
         {heroHeadline && (
-          <div className="absolute bottom-0 left-0 z-10 ~p-6/20 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-cream pointer-events-none">
+          <div className="absolute bottom-0 left-0 z-10 ~p-6/20 mb-10 md:mb-6 2xl:mb-0 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-cream pointer-events-none">
             <p className="~text-3xl/7xl leading-none text-balance">
               {heroHeadline}
             </p>
-            {heroSubline && <p className="~text-xl/3xl mt-4">{heroSubline}</p>}
+            {heroSubline && <p className="~text-xl/3xl ~mt-2/4">{heroSubline}</p>}
           </div>
         )}
 
@@ -62,9 +62,9 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           return (
             <div
               key={i}
-              className={`hero-slide w-full h-full transition duration-500 ${i + 1 === activeNum ? "relative" : "absolute top-0 left-0 opacity-0"}`}
+              className={`hero-slide w-full h-full transition duration-500 ${i + 1 === activeNum ? "relative pointer-events-auto" : "absolute top-0 left-0 opacity-0 pointer-events-none"}`}
             >
-              <SlideEl className="block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-tr after:from-black/60 after:via-transparent">
+              <SlideEl className="block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-t md:after:bg-gradient-to-tr after:from-black/60 after:via-transparent">
                 <Image
                   src={urlFor(slide.image)
                     .width(2500)
@@ -79,17 +79,17 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
               </SlideEl>
 
               {/* Caption text underneath image */}
-              <div className="w-full absolute top-full left-0 flex items-center mt-4">
+              <div className="w-full absolute top-full left-0 flex flex-col sm:flex-row sm:items-center mt-4">
                 {slide.caption && (
                   <p className="flex items-center">
                     <span className="text-xs uppercase tracking-widest font-bold">
                       Featured
                     </span>
-                    <span className="h-px w-10 mx-2 bg-primary"></span>
-                    <span className="text-sm">{slide.caption}</span>
+                    <span className="h-px w-4 sm:w-10 mx-2 bg-primary"></span>
+                    <span className="text-sm whitespace-nowrap text-ellipsis overflow-hidden">{slide.caption}</span>
                   </p>
                 )}
-                <Link className="ml-auto" href={`/projects/`}>
+                <Link className="sm:ml-auto mt-2 sm:mt-0" href={`/projects/`}>
                   Gallery
                 </Link>
               </div>
@@ -98,7 +98,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
         })}
 
         {/* Next/Prev Controls */}
-        <nav className="hero-slider-nav flex items-center justify-center absolute z-10 bottom-0 w-full text-cream py-1 font-medium bg-gradient-to-t from-black/30">
+        <nav className="hero-slider-nav flex items-center justify-center absolute z-10 bottom-0 w-full text-cream py-2 font-medium bg-gradient-to-t from-black/30">
           <button onClick={handlePrev} className="flex-1 p-4 group">
             <MdOutlineArrowBackIos className="ml-auto transition group-hover:scale-125 group-hover:-translate-x-1" />
           </button>
