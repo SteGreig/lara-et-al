@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { getServices, getStandardPageData } from "@/sanity/sanity-utils";
+import { generatePageMetadata } from "@/app/helpers/generatePageMetadata";
+import { getServices, getStandardPageData, getSEODefaults } from "@/sanity/sanity-utils";
 import { Service as ServiceType } from "@/app/types/Service";
 import HeroBanner from "@/app/components/HeroBanner/HeroBanner";
 import Image from "next/image";
@@ -7,10 +8,14 @@ import { urlFor } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { GoArrowDown } from "react-icons/go";
 
-export const metadata: Metadata = {
-  title: "Team",
-  description: "Team page",
-};
+
+export async function generateMetadata(): Promise<Metadata> {
+
+  const page = await getStandardPageData("pageServices");
+  const defaults = await getSEODefaults();
+
+  return generatePageMetadata(page, defaults);
+}
 
 const pageServices = async () => {
   const services = await getServices();

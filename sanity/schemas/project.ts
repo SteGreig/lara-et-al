@@ -73,7 +73,7 @@ export default {
       name: 'name',
       gallery: 'gallery',
     },
-    prepare(selection) {
+    prepare(selection: any) {
       const { name, gallery } = selection;
       return {
         title: name,

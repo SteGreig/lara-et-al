@@ -36,6 +36,7 @@ export async function getStandardPageData(doc: string) {
     groq`*[_type == "${doc}"][0]{
       heroHeadline,
       contentCopy,
+      "excerpt": array::join(string::split((pt::text(contentCopy)), "")[0..180], "") + "...",
       "contentImage": contentImage.asset->url,
       "contentImageAlt": contentImage.asset->alt,
       seo {
@@ -43,6 +44,33 @@ export async function getStandardPageData(doc: string) {
         metaDescription,
         "ogImage": openGraphImage.asset->url
       }
+    }`
+  )
+}
+
+export async function getSEOData(doc: string) {
+  return client.fetch(
+    groq`*[_type == "${doc}"][0]{
+      seo {
+        metaTitle,
+        metaDescription,
+        "ogImage": openGraphImage.asset->url
+      }
+    }`
+  )
+}
+
+
+export async function getSEODefaults() {
+  return client.fetch(
+    groq`*[_type == "siteSettings"][0]{
+      seo {
+        defaultMetaTitle,
+        metaTitleSuffix,
+        defaultMetaDescription,
+        "ogImage": openGraphImage.asset->url
+      },
+      siteUrl
     }`
   )
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getSEODefaults } from "@/sanity/sanity-utils";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -10,25 +11,30 @@ const dm_sans = DM_Sans({
   variable: "--font-dm_sans",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Interior Design in London, Kent and the South East",
-    template: "%s - Lara et al",
-  },
-  description:
-    "London based design studio lara et al has been creating warm, elegant, beautiful homes since 2016.",
-  metadataBase: new URL("https://laraetal.com"),
-  openGraph: {
-    images: {
-      url: "/opengraph-image.png",
-      width: 1920,
-      height: 960,
+export async function generateMetadata(): Promise<Metadata> {
+
+  const defaults = await getSEODefaults();
+  const seo = defaults.seo;
+
+  return {
+    title: {
+      default: seo.defaultMetaTitle,
+      template: `%s ${seo.metaTitleSuffix}`,
     },
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+    description: seo.defaultMetaDescription,
+    metadataBase: new URL(defaults.siteUrl),
+    openGraph: {
+      images: {
+        url: seo.ogImage,
+        width: 1920,
+        height: 960,
+      },
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
+  }
+}
 
 export default function RootLayout({
   children,
