@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HeroSlide } from "../../types/HeroSlide";
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "@/sanity/sanity-utils";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
@@ -14,7 +15,6 @@ type HeroSlider = {
 };
 
 const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
-
   const [activeNum, setActiveNum] = useState<number>(1); // Initialize the state with 0
   const max = slides.length; // Set the maximum value
 
@@ -41,8 +41,9 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
 
         {/* SLIDES */}
         {slides.map((slide, i: number) => {
-
-          { /* Make slide a link if slide image is linked to a project, otherwise a div */}
+          {
+            /* Make slide a link if slide image is linked to a project, otherwise a div */
+          }
           const SlideEl = ({
             className,
             children,
@@ -61,11 +62,15 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           return (
             <div
               key={i}
-              className={`hero-slide w-full h-full transition duration-500 ${i+1 === activeNum ? "relative" : "absolute top-0 left-0 opacity-0"}`}
+              className={`hero-slide w-full h-full transition duration-500 ${i + 1 === activeNum ? "relative" : "absolute top-0 left-0 opacity-0"}`}
             >
-              <SlideEl className="block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-tr after:from-black/40 after:via-transparent">
+              <SlideEl className="block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-tr after:from-black/60 after:via-transparent">
                 <Image
-                  src={slide.image}
+                  src={urlFor(slide.image)
+                    .width(2500)
+                    .height(1412)
+                    .fit("crop")
+                    .url()}
                   alt={slide.imageAlt ?? slide.caption}
                   width={2500}
                   height={1412}
