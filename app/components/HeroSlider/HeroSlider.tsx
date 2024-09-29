@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { HeroSlide } from "../../types/HeroSlide";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +14,18 @@ type HeroSlider = {
 };
 
 const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
+
+  const [activeNum, setActiveNum] = useState<number>(1); // Initialize the state with 0
+  const max = slides.length; // Set the maximum value
+
+  const handleNext = () => {
+    setActiveNum((prev) => (prev === max ? 1 : prev + 1)); // If current is max, go to 1, otherwise increment
+  };
+
+  const handlePrev = () => {
+    setActiveNum((prev) => (prev === 1 ? max : prev - 1)); // If current is 0, go to max, otherwise decrement
+  };
+
   return (
     <div className="hero-slider container h-[80vh] max-h-[1100px] xl:h-auto flex">
       <div className="relative h-auto w-full">
@@ -46,7 +61,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
           return (
             <div
               key={i}
-              className={`hero-slide w-full h-full ${i === 0 ? "relative" : "absolute top-0 left-0 opacity-0"}`}
+              className={`hero-slide w-full h-full transition duration-500 ${i+1 === activeNum ? "relative" : "absolute top-0 left-0 opacity-0"}`}
             >
               <SlideEl className="block w-full h-full after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-tr after:from-black/40 after:via-transparent">
                 <Image
@@ -79,15 +94,15 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
 
         {/* Next/Prev Controls */}
         <nav className="hero-slider-nav flex items-center justify-center absolute z-10 bottom-0 w-full text-cream py-1 font-medium bg-gradient-to-t from-black/30">
-          <button className="flex-1 p-4 group">
+          <button onClick={handlePrev} className="flex-1 p-4 group">
             <MdOutlineArrowBackIos className="ml-auto transition group-hover:scale-125 group-hover:-translate-x-1" />
           </button>
           <p className="flex items-center">
-            <span>{1}</span>
+            <span>{activeNum}</span>
             <span className="h-px w-4 mx-1 bg-white"></span>
-            <span>{6}</span>
+            <span>{max}</span>
           </p>
-          <button className="flex-1 p-4 group">
+          <button onClick={handleNext} className="flex-1 p-4 group">
             <MdOutlineArrowForwardIos className="mr-auto transition group-hover:scale-125 group-hover:translate-x-1" />
           </button>
         </nav>
