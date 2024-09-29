@@ -46,7 +46,7 @@ const SlideoutMenu = () => {
                   className="text-cream ~text-4xl/6xl ~py-3/5 flex gap-2 items-end group leading-none transition-all duration-300 menu-item"
                   href={`/${page.slug}/`}
                 >
-                  {page.menuTitle}
+                  <span>{page.menuTitle}</span>
                   <GoArrowUpRight className="opacity-0 -translate-x-2 group-hover:opacity-90 group-hover:translate-x-0 transition ~text-2xl/5xl" />
                 </Link>
               </li>

@@ -14,7 +14,7 @@ body {
   text-shadow: 3px 5px 35px rgba(0,0,0,.3);
 }
 
-nav:has(.menu-item:hover) .menu-item:not(.menu-item:hover) {
+nav:has(.menu-item:hover) .menu-item:not(.menu-item:hover) span {
   @apply text-primary-800;
 }
 
