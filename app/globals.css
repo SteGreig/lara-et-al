@@ -10,6 +10,14 @@ body {
   @apply bg-cream text-primary font-primary;
 }
 
+::selection {
+  @apply bg-primary text-cream;
+}
+
+.bg-primary *::selection {
+  @apply bg-cream text-primary;
+}
+
 .menu-item:hover {
   text-shadow: 3px 5px 35px rgba(0,0,0,.3);
 }

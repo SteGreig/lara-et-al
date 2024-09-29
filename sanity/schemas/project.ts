@@ -12,23 +12,16 @@ export default {
       validation: (Rule: RuleType) => Rule.required()
     },
     {
-      name: 'mainImage',
-      title: 'Main Image',
-      type: 'image',
-      options: {
-        hotspot: true
-      },
-      validation: (Rule: RuleType) => Rule.required()
-    },
-    {
       name: 'gallery',
       title: 'Gallery',
+      description: 'Drag and drop your photos into this gallery. The first image will be the main image.',
       type: 'array',
       of: [{ type: 'image' }],
       options: {
         hotspot: true,
         layout: 'grid',
-      }
+      },
+      validation: (Rule: RuleType) => Rule.required()
     },
     {
       name: 'description',
@@ -77,9 +70,15 @@ export default {
   ],
   preview: {
     select: {
-      title: 'name',
-      //subtitle: 'clientType',
-      media: 'mainImage'
-    }
+      name: 'name',
+      gallery: 'gallery',
+    },
+    prepare(selection) {
+      const { name, gallery } = selection;
+      return {
+        title: name,
+        media: gallery && gallery[0], // Use the first image in the gallery as the media
+      };
+    },
   }
 }

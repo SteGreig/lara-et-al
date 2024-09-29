@@ -101,7 +101,7 @@ export async function getProjects() {
       publishedAt,
       name,
       "slug": slug.current,
-      "image": mainImage.asset->url,
+      "image": gallery[0].asset->url,
     }`
   )
 }
@@ -113,8 +113,8 @@ export async function getProject(slug: string) {
       publishedAt,
       name,
       "slug": slug.current,
-      "image": image.asset->url,
       description,
+      "excerpt": array::join(string::split((pt::text(description)), "")[0..180], "") + "...",
       clientType,
       squareFootage,
       services,
