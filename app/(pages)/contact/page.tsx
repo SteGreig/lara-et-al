@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { getStandardPageData, getSiteSettings } from "@/sanity/sanity-utils";
+import { generatePageMetadata } from "@/app/helpers/generatePageMetadata";
+import { getStandardPageData, getSiteSettings, getSEODefaults } from "@/sanity/sanity-utils";
 import HeroBanner from "@/app/components/HeroBanner/HeroBanner";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,10 +8,11 @@ import { urlFor } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { socialLink } from "@/app/types/SocialLink";
 
-export const metadata: Metadata = {
-  title: "Team",
-  description: "Team page",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getStandardPageData("pageContact");
+  const defaults = await getSEODefaults();
+  return generatePageMetadata(page, defaults);
+}
 
 const pageContact = async () => {
 

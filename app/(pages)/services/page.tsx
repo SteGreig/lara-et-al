@@ -10,10 +10,8 @@ import { GoArrowDown } from "react-icons/go";
 
 
 export async function generateMetadata(): Promise<Metadata> {
-
   const page = await getStandardPageData("pageServices");
   const defaults = await getSEODefaults();
-
   return generatePageMetadata(page, defaults);
 }
 

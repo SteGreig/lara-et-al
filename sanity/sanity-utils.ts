@@ -48,18 +48,6 @@ export async function getStandardPageData(doc: string) {
   )
 }
 
-export async function getSEOData(doc: string) {
-  return client.fetch(
-    groq`*[_type == "${doc}"][0]{
-      seo {
-        metaTitle,
-        metaDescription,
-        "ogImage": openGraphImage.asset->url
-      }
-    }`
-  )
-}
-
 
 export async function getSEODefaults() {
   return client.fetch(
@@ -146,6 +134,7 @@ export async function getProject(slug: string) {
       clientType,
       squareFootage,
       services,
+      "mainImage": gallery[0].asset->url,
       gallery[] {
         alt,
         "url": asset->url,
