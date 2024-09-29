@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useRef } from 'react';
-import { HiArrowLongRight } from "react-icons/hi2";
-import { HiArrowLongLeft } from "react-icons/hi2";
+// import { HiArrowLongRight } from "react-icons/hi2";
+// import { HiArrowLongLeft } from "react-icons/hi2";
+import LongArrow from '../LongArrow/LongArrow';
 
 const Slider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
 
@@ -30,8 +31,12 @@ const Slider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     <div>
       <div ref={sliderRef} className="flex gap-6 overflow-x-auto hide-scrollbar snap-mandatory snap-x scroll-smooth">{children}</div>
       <nav className='w-full flex justify-center xs:justify-end px-4'>
-        <button className='px-2 py-4 text-4xl hover:text-primary-700 transition' onClick={scrollPrev}><HiArrowLongLeft /></button>
-        <button className='px-2 py-4 text-4xl hover:text-primary-700 transition' onClick={scrollNext}><HiArrowLongRight /></button>
+        <button className='px-2 py-4 text-4xl hover:brightness-50 transition' onClick={scrollPrev}>
+          <LongArrow direction='left' />
+        </button>
+        <button className='px-2 py-4 text-4xl hover:brightness-50 transition' onClick={scrollNext}>
+          <LongArrow />
+        </button>
       </nav>
     </div>
   );

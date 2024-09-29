@@ -90,7 +90,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
                     <span className="text-sm whitespace-nowrap text-ellipsis overflow-hidden">{slide.caption}</span>
                   </p>
                 )}
-                <BtnArrow href={`/projects/`} label="Gallery" />
+                <BtnArrow className={`sm:ml-auto mt-2 sm:mt-0`} href={`/projects/`} label="Gallery" />
               </div>
             </div>
           );

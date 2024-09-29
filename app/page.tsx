@@ -7,6 +7,7 @@ import { urlFor } from "@/sanity/sanity-utils";
 
 import HeroSlider from "./components/HeroSlider/HeroSlider";
 import Testimonials from "./components/Testimonials/Testimonials";
+import BtnArrow from "./components/Utils/BtnArrow";
 
 export default async function Home() {
   const page = await getStandardPageData("pageHome");
@@ -43,7 +44,7 @@ export default async function Home() {
           {page.contentCopy && (
             <article className="copy w-full md:w-7/12">
               <PortableText value={page.contentCopy} />
-              <Link href={`/team/`}>Our Team</Link>
+              <BtnArrow className="text-base mt-4" href={`/team/`} label="Our Team" />
             </article>
           )}
         </div>

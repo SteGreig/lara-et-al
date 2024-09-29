@@ -5,6 +5,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity-utils";
 import { GalleryImage } from "@/app/types/GalleryImage";
+import BtnArrow from "@/app/components/Utils/BtnArrow";
 
 type Props = {
   params: { project: string };
@@ -34,9 +35,13 @@ export default async function Project({ params }: Props) {
   return (
     <main className="container absolute top-0 left-0 min-h-screen bg-primary bg-noise-30 bg-fixed z-40 text-cream flex flex-col lg:flex-row lg:gap-8 2xl:gap-20 4xl:gap-32">
       <article className="lg:flex-[5] lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col">
-        <Link className="inline-flex mt-spacing mb-6" href="/projects/">
-          All Projects
-        </Link>
+        <BtnArrow
+          className="inline-flex mt-spacing mb-6"
+          href="/projects/"
+          label="All Projects"
+          direction="left"
+          theme="light"
+        />
 
         <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbars">
           <h1 className="text-6xl font-medium">{project.name}</h1>
