@@ -1,6 +1,22 @@
 import { Metadata } from 'next';
 
-export function generatePageMetadata(page: any, defaults: any): Metadata {
+type PageType = {
+  heroHeadline?: string;
+  excerpt?: string;
+  seo: {
+    metaTitle?: string;
+    metaDescription?: string;
+    openGraphImage?: string;
+  }
+}
+
+type defaultsType = {
+  seo: {
+    ogImage: string;
+  }
+}
+
+export function generatePageMetadata(page: PageType, defaults: defaultsType): Metadata {
 
   const seo = page.seo;
 
