@@ -5,6 +5,7 @@ import HeroBanner from "@/app/components/HeroBanner/HeroBanner";
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity-utils";
+import { GoArrowUpRight } from "react-icons/go";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -38,8 +39,9 @@ const pageProjects = async () => {
               height={648}
               className="group-hover:scale-110 transition duration-700 ease-out grayscale group-hover:grayscale-0"
             />
-            <h2 className="absolute bottom-0 left-0 text-sm p-2 text-cream/80 group-hover:text-cream transition duration-500 leading-tight z-20">
+            <h2 className="absolute bottom-0 left-0 text-sm p-2 text-cream/80 group-hover:text-cream transition duration-500 leading-tight z-20 flex items-end">
               {project.name}
+              <GoArrowUpRight className="opacity-0 -translate-x-2 transition group-hover:translate-x-0 group-hover:opacity-100 ml-1 mb-px" />
             </h2>
           </Link>
         ))}
