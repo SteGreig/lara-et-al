@@ -5,6 +5,7 @@ import HeroBanner from "@/app/components/HeroBanner/HeroBanner";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
+import { GoArrowDown } from "react-icons/go";
 
 export const metadata: Metadata = {
   title: "Team",
@@ -25,12 +26,13 @@ const pageServices = async () => {
           services.map((service: ServiceType, i: number) => (
             <details
               key={i}
-              className="border-t last:border-b border-primary container"
+              className="border-t last:border-b border-primary"
             >
-              <summary className="text-3xl cursor-pointer py-4">
+              <summary className="~text-2xl/5xl cursor-pointer py-4 container flex justify-between items-center [[open]_&>span]:rotate-180">
                 <h2>{service.title}</h2>
+                <span><GoArrowDown /></span>
               </summary>
-              <div className="flex mt-2 pb-6">
+              <div className="flex mt-2 pb-6 container">
                 <div className="copy mb-4 md:w-1/2">
                   <PortableText value={service.description} />
                 </div>
