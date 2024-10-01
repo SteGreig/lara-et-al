@@ -115,6 +115,9 @@ details:not([open]) .service-trigger:hover img {
   scrollbar-width: none;  /* Firefox */
 }
 
+details summary::-webkit-details-marker {
+  display:none;
+}
 ::marker{ display:none; }
 summary{ list-style: none }
 
