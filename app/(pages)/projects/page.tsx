@@ -23,7 +23,7 @@ const pageProjects = async () => {
     <main>
       <HeroBanner headline={page.heroHeadline} />
 
-      <div className="projects-grid my-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
+      <div className="projects-grid my-8 lg:my-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
         {projects.map((project: ProjectType, i: number) => (
           <Link
             className="project transition duration-500 relative col-span-1 overflow-hidden group after:absolute after:inset-0 after:bg-gradient-to-tr after:from-black/20"

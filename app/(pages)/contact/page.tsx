@@ -23,7 +23,7 @@ const pageContact = async () => {
     <main>
       <HeroBanner headline={page.heroHeadline} />
 
-      <div className="mt-16 container flex flex-col md:flex-row gap-8 xl:gap-16 2xl:gap-24">
+      <div className="mt-8 lg:mt-16 container flex flex-col md:flex-row gap-8 xl:gap-16 2xl:gap-24">
 
         <article className="md:flex-1">
           <div className="copy">

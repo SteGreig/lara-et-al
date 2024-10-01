@@ -24,7 +24,7 @@ const pageServices = async () => {
     <main>
       <HeroBanner headline={page.heroHeadline} />
 
-      <article className="mt-16">
+      <article className="mt-8 lg:mt-16">
         {services &&
           services.map((service: ServiceType, i: number) => (
             <details

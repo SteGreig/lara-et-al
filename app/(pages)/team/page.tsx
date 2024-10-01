@@ -21,7 +21,7 @@ const pageTeam = async () => {
     <main>
       <HeroBanner headline={page.heroHeadline} />
 
-      <div className="container mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="container mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {teamMembers.map((person: TeamMember, i: number) => (
           <div className="relative col-span-1 flex flex-col" key={i}>
             <Image
