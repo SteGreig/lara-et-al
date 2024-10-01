@@ -28,7 +28,7 @@ const HeroSlider = ({ slides, heroHeadline, heroSubline }: HeroSlider) => {
   };
 
   return (
-    <div className="hero-slider container h-[70dvh] max-h-[1100px] xl:h-auto flex">
+    <div className="hero-slider container h-[80dvh] max-h-[1100px] xl:h-auto flex">
       <div className="relative h-auto w-full">
         {/* HERO TEXT CONTENT */}
         {heroHeadline && (
