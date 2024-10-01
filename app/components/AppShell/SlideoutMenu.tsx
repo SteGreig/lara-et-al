@@ -18,7 +18,7 @@ const SlideoutMenu = () => {
       {/* Menu Trigger */}
       <button
         onClick={toggleMenu}
-        className="aspect-square bg-primary rounded-full text-cream inline-flex ~/2xl:~w-[2.375rem]/[3.23rem] group hover:shadow-lg hover:shadow-primary/20 transition duration-300"
+        className="aspect-square bg-primary rounded-full text-cream inline-flex ~/2xl:~w-[2.375rem]/[3.23rem] group hover:bg-primary-600 transition duration-300"
       >
         <div className="flex flex-col justify-between items-end transition m-auto w-[39%] h-[26%]">
           <span className="h-px w-full rounded bg-cream block"></span>
