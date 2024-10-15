@@ -40,14 +40,14 @@ export default async function Project({ params }: Props) {
   const project = await getProject(slug);
 
   return (
-    <main className="container absolute top-0 left-0 min-h-screen bg-primary bg-noise-30 bg-fixed z-40 text-cream flex flex-col lg:flex-row lg:gap-8 2xl:gap-20 4xl:gap-32">
+    <main className="container absolute top-0 left-0 min-h-screen bg-cream bg-noise-10 bg-fixed z-40 text-primary flex flex-col lg:flex-row lg:gap-8 2xl:gap-20 4xl:gap-32">
       <article className="lg:flex-[5] lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col">
         <BtnArrow
           className="inline-flex mt-spacing mb-6"
           href="/projects/"
           label="All Projects"
           direction="left"
-          theme="light"
+          theme="dark"
         />
 
         <div className="flex-1 overflow-y-auto flex flex-col items-start gap-6 pb-8 hide-scrollbar scroll-smooth">
@@ -83,6 +83,7 @@ export default async function Project({ params }: Props) {
                 alt={img.alt}
                 width={img.metadata.dimensions.width}
                 height={img.metadata.dimensions.height}
+                className="max-h-screen object-cover"
               />
             );
           })}
