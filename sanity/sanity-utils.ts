@@ -26,7 +26,8 @@ export async function getHomePage() {
         "projectSlug": projectLink->slug.current
       },
       heroSubline,
-      contentHeadline
+      contentHeadline,
+      testimonialsIntro
     }`
   )
 }

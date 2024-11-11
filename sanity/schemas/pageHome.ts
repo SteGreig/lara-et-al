@@ -82,6 +82,13 @@ export default {
       group: 'content',
     },
     {
+      name: 'testimonialsIntro',
+      title: 'Testimonials Intro',
+      type: 'string',
+      validation: (Rule: RuleType) => Rule.required(),
+      group: 'content',
+    },
+    {
       title: 'SEO / Share Settings',
       name: 'seo',
       type: 'seo',

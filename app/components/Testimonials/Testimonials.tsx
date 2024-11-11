@@ -2,17 +2,16 @@ import { getTestimonials } from "@/sanity/sanity-utils";
 import { Testimonial as TestimonialType } from "../../types/Testimonial";
 import Slider from "../Utils/Slider/Slider";
 
-export default async function Testimonials({className}: {className: string}) {
+export default async function Testimonials({className, blurb}: {className: string, blurb: string}) {
   const testimonials = await getTestimonials();
 
   return (
     <div className={`pl-spacing pr-spacing xs:pr-0 flex flex-col xl:flex-row xl:justify-between ${className}`}>
       <div className="pr-spacing xl:pr-0 w-full xl:w-5/12 max-w-screen-sm xl:max-w-[480px]">
         <h3 className="large-headline">Testimonials</h3>
-        <p className="~text-base/xl mt-2 xl:mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper
-          libero at erat tristique, sed venenatis urna varius.
-        </p>
+        {blurb && (
+          <p className="~text-base/xl mt-2 xl:mt-4">{blurb}</p>
+        )}
       </div>
       <div className="w-full xl:w-7/12 mt-6 xl:mt-0">
         <Slider>

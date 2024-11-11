@@ -49,7 +49,7 @@ export default async function Home() {
         </div>
       </main>
 
-      <Testimonials className="~mt-16/40" />
+      <Testimonials className="~mt-16/40" blurb={home.testimonialsIntro} />
     </div>
   );
 }
