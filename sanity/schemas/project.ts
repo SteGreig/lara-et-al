@@ -1,9 +1,11 @@
 import { RuleType } from "../schemaTypes";
+import { AiFillFolder } from "react-icons/ai";
 
 export default {
   name: 'project',
   title: 'Projects',
   type: 'document',
+  icon: AiFillFolder,
   fields: [
     {
       name: 'name',
@@ -66,6 +68,12 @@ export default {
           ]
         }
       ]
+    },
+    {
+      name: 'orderRank',
+      title: 'Order Rank',
+      type: 'string',
+      hidden: true
     }
   ],
   preview: {

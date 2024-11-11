@@ -37,6 +37,12 @@ export default {
         maxLength: 96
       },
       validation: (Rule: RuleType) => Rule.required()
+    },
+    {
+      name: 'orderRank',
+      title: 'Order Rank',
+      type: 'string',
+      hidden: true
     }
   ],
   preview: {

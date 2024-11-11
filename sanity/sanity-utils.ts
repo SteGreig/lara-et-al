@@ -75,7 +75,7 @@ export async function getSiteSettings() {
 
 export async function getTeamMembers() {
   return client.fetch(
-    groq`*[_type == "teamMember"] | order(publishedAt desc){
+    groq`*[_type == "teamMember"] | order(orderRank){
       _id,
       publishedAt,
       name,
@@ -89,7 +89,7 @@ export async function getTeamMembers() {
 
 export async function getTestimonials() {
   return client.fetch(
-    groq`*[_type == "testimonial"] | order(publishedAt desc){
+    groq`*[_type == "testimonial"] | order(orderRank){
       _id,
       publishedAt,
       quote,
@@ -101,7 +101,7 @@ export async function getTestimonials() {
 
 export async function getServices() {
   return client.fetch(
-    groq`*[_type == "service"] | order(publishedAt desc){
+    groq`*[_type == "service"] | order(orderRank){
       _id,
       publishedAt,
       title,
@@ -113,7 +113,7 @@ export async function getServices() {
 
 export async function getProjects() {
   return client.fetch(
-    groq`*[_type == "project"] | order(publishedAt desc){
+    groq`*[_type == "project"] | order(orderRank){
       _id,
       publishedAt,
       name,
