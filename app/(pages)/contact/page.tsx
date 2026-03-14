@@ -45,6 +45,10 @@ const pageContact = async () => {
               ))}
             </ul>
           )}
+
+          <div className="copy text-sm mt-8">
+            <p>Lara et al is a trading name of LARA GABRIELLE INTERIORS LIMITED LARA GABRIELLE INTERIORS LIMITED is a company registered 10514587 in England & Wales The registered office is 11 Cliffe House, Radnor Cliff, Folkestone, Kent, England, CT20 2TY</p>
+          </div>
         </article>
 
         <aside className="md:flex-1 flex justify-center">
